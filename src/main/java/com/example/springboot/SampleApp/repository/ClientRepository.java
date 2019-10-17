@@ -1,7 +1,10 @@
 package com.example.springboot.SampleApp.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
@@ -12,7 +15,7 @@ import com.example.springboot.SampleApp.entity.Client;
 @Component
 public class ClientRepository {
 
-	private static final Map<Integer, Client> clients = new HashMap<>();
+	private static Map<Integer, Client> clients = new HashMap<>();
 	
 	@PostConstruct
 	public void init() {
@@ -44,5 +47,26 @@ public class ClientRepository {
 	
 	public Client findById(Integer id) {
 		return clients.get(id);
+	}
+	
+	public List<Client> findAll(){
+		List<Client> cls = new ArrayList<Client>();
+		cls = clients.values().parallelStream().collect(Collectors.toList());
+		return cls;
+	}
+	
+	public void deleteById(Integer id) {
+		clients.values().removeIf(x -> id == x.getId());
+		//clients.forEach((k, v) -> System.out.println((k + ":" + v)));
+	}
+	
+	public Client saveClient(Client client) {
+		clients.put(client.getId(), client);
+		return client;
+	}
+	
+	public Client update(Integer id, Client client) {
+		clients.replace(id, client);
+		return client;
 	}
 }
