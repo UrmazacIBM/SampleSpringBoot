@@ -10,7 +10,7 @@ public class Client implements Serializable {
 private static final long serialVersionUID = -3080978361457945960L;
 	
 	private Integer id;
-	private String firtName;
+	private String firstName;
 	private String lastName;
 	private String gender;
 	
@@ -20,11 +20,11 @@ private static final long serialVersionUID = -3080978361457945960L;
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getFirtName() {
-		return firtName;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirtName(String firtName) {
-		this.firtName = firtName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
@@ -38,5 +38,4 @@ private static final long serialVersionUID = -3080978361457945960L;
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 }
