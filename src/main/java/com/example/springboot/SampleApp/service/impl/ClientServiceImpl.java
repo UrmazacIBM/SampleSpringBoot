@@ -13,8 +13,8 @@ import com.example.springboot.SampleApp.repository.ClientRepository;
 import com.example.springboot.SampleApp.service.ClientService;
 
 /*uncomment below to generate contract using cmd then go to target/classes then run:
-wsgen -verbose -keep -cp . com.example.springboot.SampleApp.service.impl.EmployeeServiceImpl
-wsgen -verbose -keep -cp . com.example.springboot.SampleApp.service.impl.EmployeeServiceImpl -wsdl*/
+wsgen -verbose -keep -cp . com.example.springboot.SampleApp.service.impl.ClientServiceImpl
+wsgen -verbose -keep -cp . com.example.springboot.SampleApp.service.impl.ClientServiceImpl -wsdl*/
 
 //@WebService(endpointInterface = "com.example.springboot.SampleApp.service.ClientService", serviceName = "ClientService", targetNamespace = "http://www.example.com/springboot/SampleApp/gen/")
 //@BindingType(value = "http://java.sun.com/xml/ns/jaxws/2003/05/soap/bindings/HTTP/")
