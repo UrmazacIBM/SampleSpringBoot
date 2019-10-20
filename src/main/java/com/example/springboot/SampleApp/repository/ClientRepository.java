@@ -1,4 +1,4 @@
-package com.example.springboot.SampleApp;
+package com.example.springboot.SampleApp.repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,9 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-import com.sample.springsoap.gen.Client;
+import com.example.springboot.SampleApp.gen.Client;
+
+
 
 @Component
 public class ClientRepository {
