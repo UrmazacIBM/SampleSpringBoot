@@ -1,63 +1,34 @@
 findById request:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.example.com/springboot/SampleApp/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:findById>
-            <gs:arg0>1</gs:arg0>
-        </gs:findById>
-    </soapenv:Body>
-</soapenv:Envelope>
+{
+    "arg0": 1
+}
 
 findAll request:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.example.com/springboot/SampleApp/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:findAll/>
-    </soapenv:Body>
-</soapenv:Envelope>
+{}
 
 update request:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.example.com/springboot/SampleApp/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:update>
-        	<gs:arg0>1</gs:arg0>
-        	<gs:arg1>
-        		<gs:firstName>John</gs:firstName>
-                <gs:gender>Male</gs:gender>
-                <gs:id>1</gs:id>
-                <gs:lastName>Doe1</gs:lastName>
-        	</gs:arg1>
-        </gs:update>
-    </soapenv:Body>
-</soapenv:Envelope>
+{
+	"arg0": 1,
+	"arg1":
+	{
+	    "id": 1,
+	    "firstName": "John",
+	    "lastName": "Doe1",
+	    "gender": "Male"
+	}
+}
 
 saveClient request:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.example.com/springboot/SampleApp/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:saveClient>
-        	<gs:arg0>
-        		<gs:firstName>John</gs:firstName>
-                <gs:gender>Male</gs:gender>
-                <gs:id>4</gs:id>
-                <gs:lastName>Doe2</gs:lastName>
-        	</gs:arg0>
-        </gs:saveClient>
-    </soapenv:Body>
-</soapenv:Envelope>
+{
+	"arg0" :{
+		"id": 4,
+		"firstName": "John",
+		"lastName": "Doe2",
+		"gender": "Male"
+	}
+}
 
 deleteById request:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.example.com/springboot/SampleApp/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:deleteById>
-        	<gs:arg0>1</gs:arg0>
-        </gs:deleteById>
-    </soapenv:Body>
-</soapenv:Envelope>
+{
+	"arg0" : 1
+}

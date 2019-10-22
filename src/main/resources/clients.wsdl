@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.example.com/springboot/SampleApp/gen"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="clients"
+	targetNamespace="http://www.example.com/springboot/SampleApp/gen">
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.example.com/springboot/SampleApp/gen">
+			<xsd:element name="findById">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="arg0" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="findByIdResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="return"
+							type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="client">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="firstName"
+						type="xsd:string" />
+					<xsd:element minOccurs="0" name="gender"
+						type="xsd:string" />
+					<xsd:element minOccurs="0" name="id" type="xsd:int" />
+					<xsd:element minOccurs="0" name="lastName"
+						type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="deleteById">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="arg0" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="deleteByIdResponse">
+				<xsd:complexType>
+					<xsd:sequence />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="update">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="arg0" type="xsd:int" />
+						<xsd:element minOccurs="0" name="arg1"
+							type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="return"
+							type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="saveClient">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="arg0"
+							type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="saveClientResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="return"
+							type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="findAll">
+				<xsd:complexType>
+					<xsd:sequence />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="findAllResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" minOccurs="0"
+							name="return" type="tns:client" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="saveClientResponse">
+		<wsdl:part element="sch:saveClientResponse"
+			name="saveClientResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findByIdResponse">
+		<wsdl:part element="sch:findByIdResponse"
+			name="findByIdResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="deleteByIdResponse">
+		<wsdl:part element="sch:deleteByIdResponse"
+			name="deleteByIdResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateResponse">
+		<wsdl:part element="sch:updateResponse"
+			name="updateResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findAllResponse">
+		<wsdl:part element="sch:findAllResponse"
+			name="findAllResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ClientsPort">
+		<wsdl:operation name="saveClient">
+			<wsdl:output message="tns:saveClientResponse"
+				name="saveClientResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findById">
+			<wsdl:output message="tns:findByIdResponse"
+				name="findByIdResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteById">
+			<wsdl:output message="tns:deleteByIdResponse"
+				name="deleteByIdResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="update">
+			<wsdl:output message="tns:updateResponse"
+				name="updateResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAll">
+			<wsdl:output message="tns:findAllResponse"
+				name="findAllResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ClientsPortSoap11"
+		type="tns:ClientsPort">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="saveClient">
+			<soap:operation soapAction="" />
+			<wsdl:output name="saveClientResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findById">
+			<soap:operation soapAction="" />
+			<wsdl:output name="findByIdResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteById">
+			<soap:operation soapAction="" />
+			<wsdl:output name="deleteByIdResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="update">
+			<soap:operation soapAction="" />
+			<wsdl:output name="updateResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAll">
+			<soap:operation soapAction="" />
+			<wsdl:output name="findAllResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ClientsPortService">
+		<wsdl:port binding="tns:ClientsPortSoap11"
+			name="ClientsPortSoap11">
+			<soap:address location="http://localhost:8082/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
